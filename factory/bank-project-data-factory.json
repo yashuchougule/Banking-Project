@@ -1,0 +1,15 @@
+{
+	"name": "bank-project-data-factory",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c7c4d2e4-cdc4-4b3a-8398-83ce86dd816f",
+		"tenantId": "efa827cc-7ec6-4f4a-9282-e27caa83b8b4"
+	}
+}
