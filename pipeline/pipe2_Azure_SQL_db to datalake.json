@@ -1,0 +1,54 @@
+{
+	"name": "pipe2_Azure_SQL_db to datalake",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup for all tables from Azure SQL DB",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
+			},
+			{
+				"name": "ForEach tables from Azure SQL DB",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lookup for all tables from Azure SQL DB",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"activities": [
+						{
+							"name": "Copy data from Azure SQL DB To Datalake",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"enableStaging": false
+							}
+						}
+					]
+				}
+			}
+		],
+		"annotations": []
+	}
+}
