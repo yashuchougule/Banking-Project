@@ -64,7 +64,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "customers"
+			"table": "accounts"
 		}
 	}
 }
