@@ -1,0 +1,21 @@
+{
+	"name": "on_prem_sql_ls1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "YASH\\SQLEXPRESS01",
+			"database": "Banking_DB",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "YASH/DSi",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyMmViZDc4ZS1lOTExLTRjNGEtYmI3My04ZTYxMmM2OWY0N2MiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
