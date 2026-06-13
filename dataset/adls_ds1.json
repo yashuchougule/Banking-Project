@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "loans.csv",
-				"folderPath": "loans",
+				"fileName": "atm_pos.csv",
+				"folderPath": "pos",
 				"fileSystem": "raw"
 			},
 			"columnDelimiter": ",",

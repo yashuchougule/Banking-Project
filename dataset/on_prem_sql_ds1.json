@@ -1,0 +1,80 @@
+{
+	"name": "on_prem_sql_ds1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "on_prem_sql_ls1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "transaction_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customer_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "transaction_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "amount",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "transaction_date",
+				"type": "date"
+			},
+			{
+				"name": "transaction_time",
+				"type": "time",
+				"scale": 7
+			},
+			{
+				"name": "merchant_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "merchant_category",
+				"type": "nvarchar"
+			},
+			{
+				"name": "atm_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "terminal_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "city",
+				"type": "nvarchar"
+			},
+			{
+				"name": "state",
+				"type": "nvarchar"
+			},
+			{
+				"name": "response_code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "available_balance",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "device_type",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "bank_schema",
+			"table": "atm_pos"
+		}
+	}
+}
