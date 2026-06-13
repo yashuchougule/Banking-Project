@@ -61,6 +61,10 @@
 				"name": "kyc_date",
 				"type": "date"
 			}
-		]
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "loans"
+		}
 	}
 }
