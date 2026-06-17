@@ -48,11 +48,29 @@
 				"outputs": [
 					{
 						"referenceName": "digital_ds2",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filepath": {
+								"value": "@pipeline().parameters.filepath",
+								"type": "Expression"
+							},
+							"filename": {
+								"value": "@pipeline().parameters.filename",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"filepath": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
