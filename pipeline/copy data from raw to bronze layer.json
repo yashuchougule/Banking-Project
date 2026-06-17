@@ -56,13 +56,26 @@
 				"outputs": [
 					{
 						"referenceName": "digital_ds2",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"folderPath": {
+								"value": "@pipeline().parameters.folderPath",
+								"type": "Expression"
+							},
+							"fileName": {
+								"value": "@pipeline().parameters.fileName",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
 		"parameters": {
-			"LoadDate": {
+			"folderPath": {
+				"type": "string"
+			},
+			"fileName": {
 				"type": "string"
 			}
 		},

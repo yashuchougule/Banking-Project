@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "atm_pos.csv",
-				"folderPath": "pos",
+				"fileName": "fraud.json",
+				"folderPath": "fraud",
 				"fileSystem": "raw"
 			},
 			"columnDelimiter": ",",
