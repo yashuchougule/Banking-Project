@@ -1,0 +1,77 @@
+{
+	"name": "digital_ds1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "raw_to_bronze_copy_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "digital_logs.csv",
+				"folderPath": "digital_logs",
+				"fileSystem": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "log_id",
+				"type": "String"
+			},
+			{
+				"name": "customer_id",
+				"type": "String"
+			},
+			{
+				"name": "session_id",
+				"type": "String"
+			},
+			{
+				"name": "login_time",
+				"type": "String"
+			},
+			{
+				"name": "logout_time",
+				"type": "String"
+			},
+			{
+				"name": "ip_address",
+				"type": "String"
+			},
+			{
+				"name": "device_type",
+				"type": "String"
+			},
+			{
+				"name": "os",
+				"type": "String"
+			},
+			{
+				"name": "browser",
+				"type": "String"
+			},
+			{
+				"name": "action_type",
+				"type": "String"
+			},
+			{
+				"name": "status",
+				"type": "String"
+			},
+			{
+				"name": "city",
+				"type": "String"
+			},
+			{
+				"name": "failure_reason",
+				"type": "String"
+			}
+		]
+	}
+}
