@@ -1,0 +1,12 @@
+{
+	"name": "rest_api_to_datalake_ls",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://github.com/yashuchougule/Banking-Project/blob/main/data/market.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
