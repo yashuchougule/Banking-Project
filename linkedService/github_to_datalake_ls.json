@@ -1,0 +1,12 @@
+{
+	"name": "github_to_datalake_ls",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://github.com/yashuchougule/Banking-Project/blob/main/data/market.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
