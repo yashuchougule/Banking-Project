@@ -5,25 +5,17 @@
 			"referenceName": "adls_ls1",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"SchemaName": {
-				"type": "string"
-			},
-			"TableName": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat('customers_',formatDateTime(utcNow(),'yyyy-MM-dd'), \n'.csv' )",
+					"value": "@concat('market_',formatDateTime(utcNow(),'yyyy_MM_dd'),'.json')",
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "@concat('customers/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
+					"value": "@concat('market/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
 					"type": "Expression"
 				},
 				"fileSystem": "bronze"
