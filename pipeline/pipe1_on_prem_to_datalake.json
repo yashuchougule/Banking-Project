@@ -24,7 +24,8 @@
 					"dataset": {
 						"referenceName": "on_prem_sql_ds1",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
