@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://github.com/yashuchougule/Banking-Project/blob/main/data/market.json",
+			"url": "https://github.com",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
