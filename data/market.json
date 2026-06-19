@@ -1,0 +1,19 @@
+{
+    "request_id": "REQ2757",
+    "timestamp": "2021-01-24 00:00:00",
+    "stocks": {
+        "TCS": 3182,
+        "INFY": 1206,
+        "HDFC": 1632
+    },
+    "interest_rates": [
+        {
+            "country": "India",
+            "rate": 5.41
+        },
+        {
+            "country": "USA",
+            "rate": 6.78
+        }
+    ]
+}
