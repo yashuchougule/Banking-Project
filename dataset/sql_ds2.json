@@ -1,0 +1,60 @@
+{
+	"name": "sql_ds2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azure_sql_db_ls1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "account_no",
+				"type": "nvarchar"
+			},
+			{
+				"name": "customer_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "account_type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "account_open_date",
+				"type": "date"
+			},
+			{
+				"name": "account_status",
+				"type": "varchar"
+			},
+			{
+				"name": "nominee_name",
+				"type": "varchar"
+			},
+			{
+				"name": "nominee_relation",
+				"type": "varchar"
+			},
+			{
+				"name": "occupation",
+				"type": "varchar"
+			},
+			{
+				"name": "annual_income",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "credit_score",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "accounts"
+		}
+	}
+}
