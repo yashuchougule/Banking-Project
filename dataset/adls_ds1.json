@@ -11,11 +11,11 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat('accounts_',formatDateTime(utcNow(),'yyyy_MM_dd'),'.csv')",
+					"value": "@concat('kyc_',formatDateTime(utcNow(),'yyyy_MM_dd'),'.csv')",
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "@concat('accounts/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
+					"value": "@concat('kyc/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
 					"type": "Expression"
 				},
 				"fileSystem": "bronze"
