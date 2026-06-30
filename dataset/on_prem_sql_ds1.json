@@ -5,6 +5,14 @@
 			"referenceName": "on_prem_sql_ls1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"schemaName": {
+				"type": "string"
+			},
+			"tableName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [
@@ -73,8 +81,14 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "bank_schema",
-			"table": "credit_card"
+			"schema": {
+				"value": "@dataset().schemaName",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tableName",
+				"type": "Expression"
+			}
 		}
 	}
 }

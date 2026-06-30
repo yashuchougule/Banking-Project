@@ -5,17 +5,28 @@
 			"referenceName": "adls_ls1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FolderName": {
+				"type": "string"
+			},
+			"LoadDate": {
+				"type": "string"
+			},
+			"FileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat('kyc_',formatDateTime(utcNow(),'yyyy_MM_dd'),'.csv')",
+					"value": "@concat(dataset().FileName,'_',dataset().LoadDate,'.csv')",
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "@concat('kyc/',formatDateTime(utcNow(),'yyyy-MM-dd'))",
+					"value": "@concat(dataset().FolderName,'/',dataset().LoadDate)",
 					"type": "Expression"
 				},
 				"fileSystem": "bronze"

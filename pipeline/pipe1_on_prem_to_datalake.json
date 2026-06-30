@@ -39,12 +39,12 @@
 						]
 					}
 				],
-				"userProperties": [],
 				"typeProperties": {
 					"items": {
 						"value": "@activity('Lookup for all tables from on prem sql').output.value",
 						"type": "Expression"
 					},
+					"batchCount": 2,
 					"activities": [
 						{
 							"name": "Copy data on-prem sql to datalake",
@@ -88,13 +88,37 @@
 							"inputs": [
 								{
 									"referenceName": "on_prem_sql_ds1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"schemaName": {
+											"value": "bank_schema",
+											"type": "Expression"
+										},
+										"tableName": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
 								{
 									"referenceName": "adls_ds1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"FolderName": {
+											"value": "@pipeline().parameters.TableName",
+											"type": "Expression"
+										},
+										"LoadDate": {
+											"value": "@formatDateTime(utcNow(),'yyyy-MM-dd')",
+											"type": "Expression"
+										},
+										"FileName": {
+											"value": "@pipeline().parameters.TableName",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
@@ -103,10 +127,10 @@
 			}
 		],
 		"parameters": {
-			"schemaName": {
+			"SchemaName": {
 				"type": "string"
 			},
-			"tableName": {
+			"TableName": {
 				"type": "string"
 			}
 		},
