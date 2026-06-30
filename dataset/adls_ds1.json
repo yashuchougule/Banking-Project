@@ -6,13 +6,10 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"FolderName": {
+			"folderpath": {
 				"type": "string"
 			},
-			"LoadDate": {
-				"type": "string"
-			},
-			"FileName": {
+			"filename": {
 				"type": "string"
 			}
 		},
@@ -22,11 +19,11 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat(dataset().FileName,'_',dataset().LoadDate,'.csv')",
+					"value": "@dataset().filename",
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "@concat(dataset().FolderName,'/',dataset().LoadDate)",
+					"value": "@dataset().folderpath",
 					"type": "Expression"
 				},
 				"fileSystem": "bronze"

@@ -39,6 +39,7 @@
 						]
 					}
 				],
+				"userProperties": [],
 				"typeProperties": {
 					"items": {
 						"value": "@activity('Lookup for all tables from on prem sql').output.value",
@@ -90,12 +91,8 @@
 									"referenceName": "on_prem_sql_ds1",
 									"type": "DatasetReference",
 									"parameters": {
-										"schemaName": {
-											"value": "bank_schema",
-											"type": "Expression"
-										},
-										"tableName": {
-											"value": "@item()",
+										"schema": {
+											"value": "@item().schema",
 											"type": "Expression"
 										}
 									}
@@ -106,16 +103,12 @@
 									"referenceName": "adls_ds1",
 									"type": "DatasetReference",
 									"parameters": {
-										"FolderName": {
-											"value": "@pipeline().parameters.TableName",
+										"folderpath": {
+											"value": "@concat(item().folderpath,'/', formatDateTime(utcNow(), 'yyyy-MM-dd'))",
 											"type": "Expression"
 										},
-										"LoadDate": {
-											"value": "@formatDateTime(utcNow(),'yyyy-MM-dd')",
-											"type": "Expression"
-										},
-										"FileName": {
-											"value": "@pipeline().parameters.TableName",
+										"filename": {
+											"value": "@concat(item().filename,'_',formatDateTime(utcNow(),'yyyy-MM-dd'),'.csv')",
 											"type": "Expression"
 										}
 									}
