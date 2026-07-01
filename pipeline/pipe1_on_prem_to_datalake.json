@@ -19,7 +19,7 @@
 						"value": "@activity('Lookup tables from on prem to adls').output.value",
 						"type": "Expression"
 					},
-					"batchCount": 2,
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Copy data on-prem sql to datalake",
@@ -63,13 +63,7 @@
 							"inputs": [
 								{
 									"referenceName": "on_prem_sql_ds1",
-									"type": "DatasetReference",
-									"parameters": {
-										"table": {
-											"value": "@item().table",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
@@ -77,12 +71,12 @@
 									"referenceName": "adls_ds1",
 									"type": "DatasetReference",
 									"parameters": {
-										"folderpath": {
-											"value": "@concat(item().folderpath,'/', formatDateTime(utcNow(), 'yyyy-MM-dd'))",
+										"schemaname": {
+											"value": "@concat(item().TableName, '/', formatDateTime(utcNow(), 'yyyy-MM-dd'))",
 											"type": "Expression"
 										},
-										"filename": {
-											"value": "@concat(item().filename,'_',formatDateTime(utcNow(),'yyyy-MM-dd'),'.csv')",
+										"tablename": {
+											"value": "@concat(item().TableName,'_',formatDateTime(utcNow(),'yyyy-MM-dd'),'.csv')",
 											"type": "Expression"
 										}
 									}
