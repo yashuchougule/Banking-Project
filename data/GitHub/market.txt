@@ -1,1 +1,5 @@
+We have another source called GitHub API- This market.json file is collected from GitHub API into Bronze Container. 
+Then We, with the help of ADF just ingest data with the help of Copy Activity, we copy all files from GitHub to Bronze container.
 
+Files - 
+1) market.json
