@@ -1,0 +1,6 @@
+We have another source called On-Prem SQL Server which is located in our local machine. we have a .csv files from banking domain. 
+Then with the help of ADF we just ingest data with the help of Copy Activity, we copy all files from On-Prem SQL Server to Bronze container.
+
+Files - 
+1) atm_pos.csv
+2) credit_card.csv 
